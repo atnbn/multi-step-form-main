@@ -1,0 +1,132 @@
+body {
+    font-family: ubuntumedium;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--Magnolia);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-wrapper {
+    background-color: var(--White);
+    border-radius: 15px;
+    height: 600px;
+    width: 900px;
+    display: flex;
+}
+
+.input-con {
+    display: flex;
+    flex-direction: column;
+}
+
+.step1__con {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.inp .step1__title {
+    margin: 0;
+    font-family: un;
+}
+
+.step1__input {
+    margin-top: 6px;
+    margin-bottom: 16px;
+    height: 35px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--Lightgray);
+}
+
+h2 {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.step2__con {
+    gap: 10px;
+}
+
+.next-btn {
+    margin-top: 100px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--marineblue);
+    color: var(--White);
+    border: 1px solid var(--marineblue);
+    align-self: flex-end;
+}
+
+.select-con {
+    display: flex;
+    gap: 15px;
+}
+
+.plan-con {
+    display: flex;
+    border: 2px solid var(--Lightgray);
+    height: 105px;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: 86px;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.plan-con:hover {
+    border: 2px solid var(--purplishblue);
+}
+
+.icon-plan {
+    width: 35px;
+}
+
+.step2__text-con {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-title {
+    font-weight: bold;
+}
+
+.plan-price {
+    font-size: 11px;
+    color: var(--Coolgray);
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+input:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

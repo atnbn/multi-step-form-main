@@ -1,0 +1,52 @@
+<section class="side-bar" [ngClass]="{ 'd-none': currentStep === 1 }">
+  <img class="background-img" src="../assets/images/bg-sidebar-desktop.svg" />
+  <div class="step-container">
+    <div class="row">
+      <div class="circle-con" [ngClass]="{ 'current-step': currentStep === 1 }">
+        <span
+          class="step-circle"
+          [ngClass]="{ 'current-step-title': currentStep === 1 }"
+          >1</span
+        >
+      </div>
+      <div class="text-con">
+        <span class="title">STEP 1</span>
+        <span class="text">YOUR INFO</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div [ngClass]="{ 'current-step': currentStep === 2 }" class="circle-con">
+        <span
+          [ngClass]="{ 'current-step-title': currentStep === 2 }"
+          class="step-circle"
+          >2</span
+        >
+      </div>
+      <div class="text-con">
+        <span class="title">STEP 2</span>
+        <span class="text">SELECT PLAN</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="circle-3" class="circle-con">
+        <span id="circle-number-3" class="step-circle">3</span>
+      </div>
+      <div class="text-con">
+        <span class="title">STEP 3</span>
+        <span class="text">ADD-ONS</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="circle-4" class="circle-con">
+        <span id="circle-number-4" class="step-circle">4</span>
+      </div>
+      <div class="text-con">
+        <span class="title">STEP 4</span>
+        <span class="text">SUMMARY</span>
+      </div>
+    </div>
+  </div>
+</section>

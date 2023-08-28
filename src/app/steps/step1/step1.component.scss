@@ -1,0 +1,40 @@
+.input-con {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.inp h2 {
+    margin: 0;
+    font-family: unb;
+}
+
+.step1__input {
+    margin-top: 6px;
+    margin-bottom: 16px;
+    height: 35px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--Lightgray);
+}
+
+h2 {
+    padding: 0;
+    margin-bottom: 0;
+}
+.hidden {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}

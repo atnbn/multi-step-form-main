@@ -1,0 +1,59 @@
+h2 {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.step2__con {
+    gap: 10px;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.select-con {
+    display: flex;
+    gap: 15px;
+}
+
+.plan-con {
+    display: flex;
+    border: 2px solid var(--Lightgray);
+    height: 105px;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: 86px;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.plan-con:hover {
+    border: 2px solid var(--purplishblue);
+}
+
+.icon-plan {
+    width: 35px;
+}
+
+.step2__text-con {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-title {
+    font-weight: bold;
+}
+
+.plan-price {
+    font-size: 11px;
+    color: var(--Coolgray);
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,60 @@
+:root {
+    --marineblue: hsl(213, 96%, 18%);
+    --purplishblue: hsl(243, 100%, 62%);
+    --pastelblue: hsl(228, 100%, 84%);
+    --Lightblue: hsl(206, 94%, 87%);
+    --strawberryred: hsl(354, 84%, 57%);
+    --Coolgray: hsl(231, 11%, 63%);
+    --Lightgray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: ubuntumedium;
+    background-color: var(--Magnolia);
+}
+
+@font-face {
+    font-family: ubuntu;
+    font-weight: bold;
+    src: url("/assets/fonts/Ubuntu-Bold.ttf");
+}
+
+@font-face {
+    font-family: ubuntunormal;
+    font-weight: normal;
+    src: url("/assets/fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+    font-family: ubuntumedium;
+    font-weight: medium;
+    src: url("/assets/fonts/Ubuntu-Medium.ttf");
+}
+
+.next-btn {
+    margin-top: 100px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--marineblue);
+    color: var(--White);
+    border: 1px solid var(--marineblue);
+    align-self: flex-end;
+}
+
+input:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}
