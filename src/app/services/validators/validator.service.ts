@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 @Injectable({
-  providedIn: 'root', // This registers the service globally in your app
+  providedIn: 'root',
 })
 export class ValidatorService {
   constructor() {}

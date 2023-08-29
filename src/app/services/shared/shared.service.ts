@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class SharedService {
-  private numberSource = new BehaviorSubject<number>(1);
+  private numberSource = new BehaviorSubject<number>(3);
   number$ = this.numberSource.asObservable();
 
   setNumber(newValue: number) {

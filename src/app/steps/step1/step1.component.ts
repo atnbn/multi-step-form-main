@@ -6,6 +6,7 @@ import {
   ValidatorFn,
   AbstractControl,
 } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { SharedService } from 'src/app/services/shared/shared.service';
 import { ValidatorService } from 'src/app/services/validators/validator.service';
 @Component({
@@ -14,10 +15,14 @@ import { ValidatorService } from 'src/app/services/validators/validator.service'
   styleUrls: ['./step1.component.scss'],
 })
 export class Step1Component {
+  savedName: any;
   constructor(
     private validatorService: ValidatorService,
     public sharedService: SharedService
-  ) {}
+  ) {
+    this.savedName = localStorage.getItem('name');
+    console.log(this.savedName);
+  }
   contactForm = new FormGroup({
     name: new FormControl('', [
       Validators.required,
@@ -34,7 +39,6 @@ export class Step1Component {
   });
 
   onSubmit() {
-    this.sharedService.setNumber(2);
-    console.log('test');
+    return this.sharedService.setNumber(2);
   }
 }

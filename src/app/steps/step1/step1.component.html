@@ -5,11 +5,11 @@
     <div class="input-con">
       <label for="name">Name</label>
       <input
-        id="name"
         type="text"
         formControlName="name"
         class="step1__input"
         placeholder="e.g. Stephen King"
+        [ngModel]="savedName"
       />
       <label>Email Address</label>
       <input

@@ -1,30 +1,82 @@
-<section class="step1__con step2__con" id="step-1">
-  <h2 class="step1__title">Select your plan</h2>
-  <span>You have the option of monthly or yearly billing</span>
+<section class="step2__con">
+  <div class="title-con">
+    <h2 class="step1__title">Select your plan</h2>
+    <span>You have the option of monthly or yearly billing</span>
+  </div>
+
   <div class="select-con">
-    <div class="plan-con">
+    <div
+      class="plan-con"
+      (click)="test(1)"
+      [ngClass]="{ 'active-plan': this.currentPlan === 1 }"
+    >
       <img class="icon-plan" src="../assets/images/icon-arcade.svg" />
       <div id="plan1" class="step2__text-con">
-        <span class="plan-title">Arcade</span>
-        <span class="plan-price" id="price-arcade">$9/mo</span>
+        <span class="plan-title">{{ plan1.planType }}</span>
+        <span class="plan-price" *ngIf="!this.yearly"
+          >${{ plan1.pricingMonthly }}/mo</span
+        >
+        <span class="plan-price" *ngIf="this.yearly"
+          >${{ plan1.pricingYearly }}/yearly</span
+        >
+        <span class="plan-price free" *ngIf="this.yearly">2 months free</span>
       </div>
     </div>
 
-    <div class="plan-con">
+    <div
+      class="plan-con"
+      (click)="test(2)"
+      [ngClass]="{ 'active-plan': this.currentPlan === 2 }"
+    >
       <img class="icon-plan" src="../assets/images/icon-advanced.svg" />
-      <div id="plan2" class="step2__text-con">
-        <span class="plan-title">Advanced</span>
-        <span class="plan-price" id="price-arcade">$12/mo</span>
+      <div class="step2__text-con">
+        <span class="plan-title">{{ plan2.planType }}</span>
+        <span class="plan-price" *ngIf="!this.yearly"
+          >${{ plan2.pricingMonthly }}/mo</span
+        >
+        <span class="plan-price" *ngIf="this.yearly"
+          >${{ plan2.pricingYearly }}/mo</span
+        >
+        <span class="plan-price free" *ngIf="this.yearly">2 months free</span>
       </div>
     </div>
 
-    <div class="plan-con">
+    <div
+      class="plan-con"
+      (click)="test(3)"
+      [ngClass]="{ 'active-plan': this.currentPlan === 3 }"
+    >
       <img class="icon-plan" src="../assets/images/icon-pro.svg" />
-      <div id="plan3" class="step2__text-con">
-        <span class="plan-title">Pro</span>
-        <span class="plan-price" id="price-arcade">$15/mo</span>
+      <div class="step2__text-con">
+        <span class="plan-title">{{ plan3.planType }}</span>
+        <span class="plan-price" *ngIf="!this.yearly"
+          >${{ plan3.pricingMonthly }}/mo</span
+        >
+        <span class="plan-price" *ngIf="this.yearly"
+          >${{ plan2.pricingYearly }}/mo</span
+        >
+        <span class="plan-price free" *ngIf="this.yearly">2 months free</span>
       </div>
     </div>
   </div>
-  <button id="next" class="next-btn">Next Step</button>
+  <div class="subscription-type">
+    <span
+      class="subscription-text"
+      [ngClass]="{ 'active-subscription': !this.yearly }"
+      >Monthly</span
+    >
+    <label class="switch">
+      <input (click)="setSubscriptionType()" type="checkbox" />
+      <span class="slider round"></span>
+    </label>
+    <span
+      [ngClass]="{ 'active-subscription': this.yearly }"
+      class="subscription-text"
+      >Yearly</span
+    >
+  </div>
+  <div class="btns">
+    <button (click)="goBack()" class="back-btn"></button>
+    <button (click)="onSubmit()" class="next-btn">Next Step</button>
+  </div>
 </section>
