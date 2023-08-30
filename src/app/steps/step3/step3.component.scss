@@ -21,6 +21,8 @@ section {
 .addon-con {
     display: flex;
     flex-direction: column;
+    gap: 13px;
+    margin-top: 15px;
 }
 .addon-row {
     display: flex;
@@ -28,6 +30,9 @@ section {
     border: 2px solid var(--Lightgray);
     padding: 15px;
     width: 400px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
 }
 .description {
     font-size: 12px;
@@ -37,7 +42,15 @@ section {
 .description-con {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 .pricing {
     justify-self: flex-end;
+    color: var(--purplishblue);
+    font-size: 13px;
+}
+
+.left-side {
+    display: flex;
+    gap: 15px;
 }

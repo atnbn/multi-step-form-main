@@ -30,8 +30,17 @@
     </div>
 
     <div class="row">
-      <div id="circle-3" class="circle-con">
-        <span id="circle-number-3" class="step-circle">3</span>
+      <div
+        id="circle-3"
+        class="circle-con"
+        [ngClass]="{ 'current-step': currentStep === 3 }"
+      >
+        <span
+          id="circle-number-3"
+          class="step-circle"
+          [ngClass]="{ 'current-step-title': currentStep === 3 }"
+          >3</span
+        >
       </div>
       <div class="text-con">
         <span class="title">STEP 3</span>
