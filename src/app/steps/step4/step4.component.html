@@ -1,0 +1,37 @@
+<section>
+  <h2>Finishung up</h2>
+  <span>Double-check everything looks OK before confirming</span>
+  <div class="payments-con" *ngIf="planData">
+    <div class="plan__con" *ngFor="let data of planData">
+      <div class="plan__text__left">
+        <span class="plan__type"
+          >{{ data.planType }} ({{ data.yearly ? "Yearly" : "Monthly" }})</span
+        >
+        <a href="">Change</a>
+      </div>
+      <!-- <span class="price"
+        >${{ data.yearly ? data.pricingYearly : data.pricingMonthly }}/mo</span
+      > -->
+      <span class="price" *ngIf="data.yearly"
+        >${{ data.pricingYearly }}/yr</span
+      >
+      <span class="price" *ngIf="!data.yearly"
+        >${{ data.pricingMonthly }}/mo</span
+      >
+    </div>
+    <hr class="line" />
+    <div class="abo__con" *ngFor="let addon of addonData">
+      <span class="abo__text">{{ addon.name }}</span>
+      <span class="abo__price">+${{ addon.price }}/mo</span>
+    </div>
+  </div>
+  <div class="sum__con">
+    <span class="sum__title">Total (per month)</span>
+    <span class="sum__total">+$12/mo</span>
+  </div>
+
+  <div class="btns">
+    <button (click)="goBack()" class="back-btn">Go Back</button>
+    <button (click)="onSubmit()" class="confirm-btn">Confirm</button>
+  </div>
+</section>

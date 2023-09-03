@@ -10,26 +10,53 @@ export class Step2Component {
   yearly: boolean = false;
   disabled: boolean = false;
   currentPlan: number = 0;
-  plan1: Plan = {
-    planType: 'Arcade',
-    pricingMonthly: 9,
-    pricingYearly: 90,
-  };
-  plan2: Plan = {
-    planType: 'Advanced',
-    pricingMonthly: 12,
-    pricingYearly: 120,
-  };
-  plan3: Plan = {
-    planType: 'Pro',
-    pricingMonthly: 15,
-    pricingYearly: 150,
-  };
+  currentObject: any[] = [];
+  plans: Plan[] = [
+    {
+      planType: 'Arcade',
+      pricingMonthly: 9,
+      pricingYearly: 90,
+      yearly: false,
+      url: '../assets/images/icon-arcade.svg',
+      id: 1,
+    },
+    {
+      planType: 'Advanced',
+      pricingMonthly: 12,
+      pricingYearly: 120,
+      yearly: false,
+      url: '../assets/images/icon-advanced.svg',
+      id: 2,
+    },
+    {
+      planType: 'Pro',
+      pricingMonthly: 15,
+      pricingYearly: 150,
+      yearly: false,
+      url: '../assets/images/icon-pro.svg',
+      id: 3,
+    },
+  ];
 
   constructor(private sharedService: SharedService) {}
 
   onSubmit() {
-    if (this.currentPlan > 0) this.sharedService.setNumber(3);
+    if (this.currentPlan > 0) {
+      let overall: any[] = [];
+      this.plans.forEach((add) => {
+        if (this.currentPlan === add.id) {
+          if (this.yearly) {
+            add.yearly = true;
+          } else {
+            add.yearly = false;
+          }
+          overall.push(add);
+        }
+        this.currentObject = overall;
+        this.sharedService.sendPlanDataToComponent(this.currentObject);
+      });
+      this.sharedService.setNumber(3);
+    }
   }
 
   setSubscriptionType(): void {
@@ -39,7 +66,8 @@ export class Step2Component {
       this.yearly = false;
     }
   }
-  test(plan: number) {
+
+  addPlan(plan: number) {
     this.currentPlan = plan;
   }
 

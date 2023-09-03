@@ -39,23 +39,41 @@ export class Step3Component {
   }
 
   onSubmit() {
-    // this.sharedService.setNumber(4);
+    const newCurrentPlan: any[] = [];
+
     this.addons.forEach((add) => {
-      if (add.select && !this.currentPlan.some((plan) => plan.id === add.id)) {
-        this.currentPlan.push(add);
-      } else if (!this.currentPlan.find((plan) => plan.id === add.id)) {
+      if (add.select) {
+        newCurrentPlan.push(add);
       }
     });
-    console.log(this.currentPlan);
+
+    this.currentPlan = newCurrentPlan;
+    this.sharedService.sendAddonDataToComponent(this.currentPlan);
+    this.sharedService.setNumber(4);
   }
 
   onChange($event: any) {
     const id = $event.target.value;
     const isChecked = $event.target.checked;
-    this.addons.map((add: any) => {
-      if (add.id === Number(id)) {
-        add.select = true;
-      }
-    });
+
+    // Find the index of the addon with the given id
+    const addonIndex = this.addons.findIndex(
+      (add: any) => add.id === Number(id)
+    );
+
+    if (addonIndex !== -1) {
+      const selectedAddon = this.addons[addonIndex];
+
+      // Update the selected state of the specific addon
+      selectedAddon.select = isChecked;
+
+      // If deselecting, check if any other addons are still selected
+      // if (!isChecked) {
+      //   const anyAddonSelected = this.addons.some((add: any) => add.select);
+      //   if (!anyAddonSelected) {
+      //     // No addons are selected, perform any necessary actions here
+      //   }
+      // }
+    }
   }
 }

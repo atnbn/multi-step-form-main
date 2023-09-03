@@ -7,53 +7,18 @@
   <div class="select-con">
     <div
       class="plan-con"
-      (click)="test(1)"
-      [ngClass]="{ 'active-plan': this.currentPlan === 1 }"
+      (click)="addPlan(plan.id)"
+      *ngFor="let plan of plans"
+      [ngClass]="{ 'active-plan': currentPlan === plan.id }"
     >
-      <img class="icon-plan" src="../assets/images/icon-arcade.svg" />
+      <img class="icon-plan" [src]="plan.url" />
       <div id="plan1" class="step2__text-con">
-        <span class="plan-title">{{ plan1.planType }}</span>
+        <span class="plan-title">{{ plan.planType }}</span>
         <span class="plan-price" *ngIf="!this.yearly"
-          >${{ plan1.pricingMonthly }}/mo</span
+          >${{ plan.pricingMonthly }}/mo</span
         >
         <span class="plan-price" *ngIf="this.yearly"
-          >${{ plan1.pricingYearly }}/yearly</span
-        >
-        <span class="plan-price free" *ngIf="this.yearly">2 months free</span>
-      </div>
-    </div>
-
-    <div
-      class="plan-con"
-      (click)="test(2)"
-      [ngClass]="{ 'active-plan': this.currentPlan === 2 }"
-    >
-      <img class="icon-plan" src="../assets/images/icon-advanced.svg" />
-      <div class="step2__text-con">
-        <span class="plan-title">{{ plan2.planType }}</span>
-        <span class="plan-price" *ngIf="!this.yearly"
-          >${{ plan2.pricingMonthly }}/mo</span
-        >
-        <span class="plan-price" *ngIf="this.yearly"
-          >${{ plan2.pricingYearly }}/mo</span
-        >
-        <span class="plan-price free" *ngIf="this.yearly">2 months free</span>
-      </div>
-    </div>
-
-    <div
-      class="plan-con"
-      (click)="test(3)"
-      [ngClass]="{ 'active-plan': this.currentPlan === 3 }"
-    >
-      <img class="icon-plan" src="../assets/images/icon-pro.svg" />
-      <div class="step2__text-con">
-        <span class="plan-title">{{ plan3.planType }}</span>
-        <span class="plan-price" *ngIf="!this.yearly"
-          >${{ plan3.pricingMonthly }}/mo</span
-        >
-        <span class="plan-price" *ngIf="this.yearly"
-          >${{ plan2.pricingYearly }}/mo</span
+          >${{ plan.pricingYearly }}/yearly</span
         >
         <span class="plan-price free" *ngIf="this.yearly">2 months free</span>
       </div>
@@ -76,7 +41,7 @@
     >
   </div>
   <div class="btns">
-    <button (click)="goBack()" class="back-btn"></button>
+    <button (click)="goBack()" class="back-btn">Go back</button>
     <button (click)="onSubmit()" class="next-btn">Next Step</button>
   </div>
 </section>
