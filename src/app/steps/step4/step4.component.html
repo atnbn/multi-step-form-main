@@ -1,33 +1,46 @@
 <section>
   <h2>Finishung up</h2>
   <span>Double-check everything looks OK before confirming</span>
-  <div class="payments-con" *ngIf="planData">
-    <div class="plan__con" *ngFor="let data of planData">
+  <div class="payments-con" *ngIf="finalObject && !finalObject?.duration">
+    <div class="plan__con">
       <div class="plan__text__left">
-        <span class="plan__type"
-          >{{ data.planType }} ({{ data.yearly ? "Yearly" : "Monthly" }})</span
-        >
-        <a href="">Change</a>
+        <span class="plan__type">{{ finalObject.abotyp }} (Monthly )</span>
+        <a class="plan__change" (click)="goToStep2()">Change</a>
       </div>
-      <!-- <span class="price"
-        >${{ data.yearly ? data.pricingYearly : data.pricingMonthly }}/mo</span
-      > -->
-      <span class="price" *ngIf="data.yearly"
-        >${{ data.pricingYearly }}/yr</span
-      >
-      <span class="price" *ngIf="!data.yearly"
-        >${{ data.pricingMonthly }}/mo</span
-      >
+      <span class="price">${{ finalObject.price }}/mo</span>
     </div>
     <hr class="line" />
-    <div class="abo__con" *ngFor="let addon of addonData">
+    <div class="abo__con" *ngFor="let addon of finalObject.addons">
       <span class="abo__text">{{ addon.name }}</span>
       <span class="abo__price">+${{ addon.price }}/mo</span>
     </div>
   </div>
+
+  <!-- Yearly -->
+
+  <div class="payments-con" *ngIf="finalObject?.duration && finalObject">
+    <div class="plan__con">
+      <div class="plan__text__left">
+        <span class="plan__type"> {{ finalObject.abotyp }} (Yearly)</span>
+        <u> <a class="plan__change" (click)="goToStep2()">Change</a></u>
+      </div>
+
+      <span class="price">{{ finalObject.price }} $/yr</span>
+    </div>
+    <hr class="line" />
+    <div class="abo__con" *ngFor="let addon of finalObject.addons">
+      <span class="abo__text">{{ addon.name }}</span>
+      <span class="abo__price">+${{ addon.price }}/year</span>
+    </div>
+  </div>
   <div class="sum__con">
-    <span class="sum__title">Total (per month)</span>
-    <span class="sum__total">+$12/mo</span>
+    <span class="sum__title">Total (per year)</span>
+    <span class="sum__total" *ngIf="!finalObject?.duration"
+      >+${{ this.finalSum }}/mo</span
+    >
+    <span class="sum__total" *ngIf="finalObject?.duration"
+      >+${{ this.finalSum }}/year</span
+    >
   </div>
 
   <div class="btns">

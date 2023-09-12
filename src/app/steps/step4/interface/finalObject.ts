@@ -1,8 +1,8 @@
 export interface FinalObject {
-  planType: string;
+  abotyp: string;
   price: number;
-  yearly: boolean;
-  addons: finalAddons[];
+  duration: boolean;
+  addons?: finalAddons[];
 }
 
 export interface finalAddons {

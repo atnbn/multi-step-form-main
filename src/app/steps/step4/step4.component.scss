@@ -79,7 +79,11 @@ a {
     font-weight: bold;
     font-size: 17px;
 }
-
+.plan__change {
+    color: var(--Coolgray);
+    text-decoration: underline;
+    cursor: pointer;
+}
 .confirm-btn {
     width: 120px;
     height: 50px;

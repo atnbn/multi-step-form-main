@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -23,10 +23,10 @@ export class SharedService {
   }
 
   getAddonData(): any {
-    return this.addonData;
+    return of(this.addonData);
   }
 
   getPlanData(): any {
-    return this.planData;
+    return of(this.planData);
   }
 }

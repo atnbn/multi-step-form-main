@@ -26,15 +26,15 @@ export class Step1Component {
   contactForm = new FormGroup({
     name: new FormControl('', [
       Validators.required,
-      // this.validatorService.nameValidator,
+      this.validatorService.nameValidator,
     ]),
     email: new FormControl('', [
       Validators.required,
-      // this.validatorService.emailValidator(),
+      this.validatorService.emailValidator(),
     ]),
     mobile: new FormControl('', [
       Validators.required,
-      // this.validatorService.mobileValidator(),
+      this.validatorService.mobileValidator(),
     ]),
   });
 
