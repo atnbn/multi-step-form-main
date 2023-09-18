@@ -1,5 +1,5 @@
-<section>
-  <h2>Finishung up</h2>
+<section *ngIf="!end">
+  <h2>Finishing up</h2>
   <span>Double-check everything looks OK before confirming</span>
   <div class="payments-con" *ngIf="finalObject && !finalObject?.duration">
     <div class="plan__con">
@@ -46,5 +46,17 @@
   <div class="btns">
     <button (click)="goBack()" class="back-btn">Go Back</button>
     <button (click)="onSubmit()" class="confirm-btn">Confirm</button>
+  </div>
+</section>
+
+<section class="confirm" *ngIf="end">
+  <img src="../assets/images/icon-thank-you.svg" />
+  <span class="high">Thank you!</span>
+  <div class="text__con">
+    <span>
+      Thanks for confirming your subscription! We hope you have fun using our
+      platform. If you ever need support, please feel free to email us at
+      support@loremgaming.com.
+    </span>
   </div>
 </section>

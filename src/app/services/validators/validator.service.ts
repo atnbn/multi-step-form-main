@@ -18,7 +18,7 @@ export class ValidatorService {
 
   mobileValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
-      const mobileRegex = /^\+\d{1,3}\s\d{1,3}\s\d{1,10}$/;
+      const mobileRegex = /^\+\d{1,3}\s?\d{1,3}\s?\d{1,10}$/;
       const isValid = mobileRegex.test(control.value);
 
       return isValid ? null : { invalidMobile: { value: control.value } };
@@ -27,7 +27,7 @@ export class ValidatorService {
 
   nameValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
-      const nameRegex = /^[A-Za-z\s]+$/;
+      const nameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
       const isValid = nameRegex.test(control.value);
 
       return isValid ? null : { invalidName: { value: control.value } };

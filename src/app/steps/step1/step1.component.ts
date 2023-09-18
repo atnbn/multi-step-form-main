@@ -6,7 +6,6 @@ import {
   ValidatorFn,
   AbstractControl,
 } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { SharedService } from 'src/app/services/shared/shared.service';
 import { ValidatorService } from 'src/app/services/validators/validator.service';
 @Component({
@@ -15,14 +14,13 @@ import { ValidatorService } from 'src/app/services/validators/validator.service'
   styleUrls: ['./step1.component.scss'],
 })
 export class Step1Component {
-  savedName: any;
+  formSubmitted = false;
+
   constructor(
     private validatorService: ValidatorService,
     public sharedService: SharedService
-  ) {
-    this.savedName = localStorage.getItem('name');
-    console.log(this.savedName);
-  }
+  ) {}
+
   contactForm = new FormGroup({
     name: new FormControl('', [
       Validators.required,
@@ -37,8 +35,31 @@ export class Step1Component {
       this.validatorService.mobileValidator(),
     ]),
   });
-
   onSubmit() {
+    this.formSubmitted = true;
     return this.sharedService.setNumber(2);
+  }
+
+  onClick(event: Event) {
+    const target = event.target as HTMLElement;
+    target.classList.remove('invalid');
+    target.classList.add('active');
+  }
+
+  onBlur(event: Event) {
+    const target = event.target as HTMLElement;
+    target.classList.remove('active');
+
+    if (target.id === 'name' && this.contactForm.controls['name'].invalid) {
+      target.classList.add('invalid');
+    }
+
+    if (target.id === 'email' && this.contactForm.controls['email'].invalid) {
+      target.classList.add('invalid');
+    }
+
+    if (target.id === 'mobile' && this.contactForm.controls['mobile'].invalid) {
+      target.classList.add('invalid');
+    }
   }
 }

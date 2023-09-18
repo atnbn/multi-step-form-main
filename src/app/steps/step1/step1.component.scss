@@ -13,7 +13,7 @@ section {
 
 .inp h2 {
     margin: 0;
-    font-family: unb;
+    font-family: ubuntu;
 }
 
 .step1__input {
@@ -37,4 +37,22 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
+}
+
+.title__con {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error__message {
+    color: var(--strawberryred);
+    font-size: 14px;
+}
+
+.invalid {
+    border: 1px solid red; /* Change the border style when invalid */
+}
+
+.active {
+    border: 1px solid var(--purplishblue);
 }

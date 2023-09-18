@@ -64,16 +64,7 @@ export class Step3Component {
     if (addonIndex !== -1) {
       const selectedAddon = this.addons[addonIndex];
 
-      // Update the selected state of the specific addon
       selectedAddon.select = isChecked;
-
-      // If deselecting, check if any other addons are still selected
-      // if (!isChecked) {
-      //   const anyAddonSelected = this.addons.some((add: any) => add.select);
-      //   if (!anyAddonSelected) {
-      //     // No addons are selected, perform any necessary actions here
-      //   }
-      // }
     }
   }
 }

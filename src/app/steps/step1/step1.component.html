@@ -3,27 +3,70 @@
   <span>Please provide your name, email address, and phone number.</span>
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="input-con">
-      <label for="name">Name</label>
+      <div class="title__con">
+        <label for="name">Name</label>
+        <span
+          class="error__message"
+          *ngIf="
+            contactForm.controls['name'].invalid &&
+            (contactForm.controls['name'].dirty ||
+              contactForm.controls['name'].touched)
+          "
+        >
+          Name is required.
+        </span>
+      </div>
       <input
+        id="name"
         type="text"
         formControlName="name"
         class="step1__input"
         placeholder="e.g. Stephen King"
-        [ngModel]="savedName"
+        (focus)="onClick($event)"
+        (blur)="onBlur($event)"
       />
-      <label>Email Address</label>
+      <div class="title__con">
+        <label>Email Address</label>
+        <span
+          class="error__message"
+          *ngIf="
+            contactForm.controls['email'].invalid &&
+            (contactForm.controls['email'].dirty ||
+              contactForm.controls['email'].touched)
+          "
+          >Email is required</span
+        >
+      </div>
+
       <input
         id="email"
         formControlName="email"
         class="step1__input"
         placeholder="e.g. stephenking@lorem.com"
+        (focus)="onClick($event)"
+        (blur)="onBlur($event)"
       />
-      <label> Phone Number </label>
+
+      <div class="title__con">
+        <label> Phone Number </label>
+        <span
+          class="error__message"
+          *ngIf="
+            contactForm.controls['mobile'].invalid &&
+            (contactForm.controls['mobile'].dirty ||
+              contactForm.controls['mobile'].touched)
+          "
+          >Phone number is required</span
+        >
+      </div>
       <input
+        [ngClass]=""
         class="step1__input"
         id="mobile"
         formControlName="mobile"
-        placeholder=" e.g. +1 234 567 890 Next Step"
+        placeholder=" e.g. +1 234 567 890 "
+        (blur)="onBlur($event)"
+        id="1"
       />
     </div>
     <button type="submit" class="next-btn" [disabled]="!contactForm.valid">

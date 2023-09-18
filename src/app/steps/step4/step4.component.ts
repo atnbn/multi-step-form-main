@@ -3,7 +3,7 @@ import { SharedService } from 'src/app/services/shared/shared.service';
 import { FinalObject } from './interface/finalObject';
 import { Plan } from '../step2/interface/plan2-interface';
 import { Addon } from '../step3/interface/addon';
-import { Observable, combineLatest, forkJoin } from 'rxjs';
+import { Observable, combineLatest, forkJoin, of } from 'rxjs';
 
 @Component({
   selector: 'app-step4',
@@ -15,6 +15,7 @@ export class Step4Component implements OnInit {
   // // finalObject: any[] = [];
   finalObject: FinalObject | null = null;
   finalSum: number = 0;
+  end: boolean = false;
 
   constructor(private sharedService: SharedService) {}
 
@@ -29,8 +30,6 @@ export class Step4Component implements OnInit {
 
         if (addonData.length > 0) {
           this.takeBothObjects(firstPlanData, addonData);
-        } else {
-          // Handle the case where addonData is empty
         }
       }
     });
@@ -41,8 +40,9 @@ export class Step4Component implements OnInit {
   }
 
   onSubmit() {
-    console.log('hello');
+    this.end = true;
   }
+
   takePlanObject(planData: Plan) {
     if (planData) {
       const finalObject: FinalObject = {
@@ -57,6 +57,7 @@ export class Step4Component implements OnInit {
       console.log(this.finalObject?.duration);
     }
   }
+
   takeBothObjects(planData: Plan, addonData: Addon[]) {
     if (planData) {
       this.finalSum = 0;
@@ -83,10 +84,9 @@ export class Step4Component implements OnInit {
       // Assign the final object to the class property
       this.finalObject = finalObject;
       this.finalSum += finalObject.price;
-      console.log(finalObject);
-      console.log(this.finalSum);
     }
   }
+
   goToStep2() {
     this.sharedService.setNumber(2);
   }
