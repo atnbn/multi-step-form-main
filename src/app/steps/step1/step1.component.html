@@ -60,17 +60,18 @@
         >
       </div>
       <input
-        [ngClass]=""
         class="step1__input"
         id="mobile"
         formControlName="mobile"
         placeholder=" e.g. +1 234 567 890 "
+        (focus)="onClick($event)"
         (blur)="onBlur($event)"
-        id="1"
       />
     </div>
-    <button type="submit" class="next-btn" [disabled]="!contactForm.valid">
-      Next Step
-    </button>
+    <div class="button__con">
+      <button type="submit" class="next-btn" [disabled]="!contactForm.valid">
+        Next Step
+      </button>
+    </div>
   </form>
 </section>

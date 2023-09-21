@@ -1,5 +1,10 @@
 <section class="side-bar" [ngClass]="{ 'd-none': currentStep === 1 }">
   <img class="background-img" src="../assets/images/bg-sidebar-desktop.svg" />
+  <img
+    class="responsiv-background"
+    src="../assets/images/bg-sidebar-mobile.svg"
+  />
+
   <div class="step-container">
     <div class="row">
       <div class="circle-con" [ngClass]="{ 'current-step': currentStep === 1 }">

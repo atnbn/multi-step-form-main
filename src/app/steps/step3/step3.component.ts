@@ -63,7 +63,6 @@ export class Step3Component {
 
     if (addonIndex !== -1) {
       const selectedAddon = this.addons[addonIndex];
-
       selectedAddon.select = isChecked;
     }
   }

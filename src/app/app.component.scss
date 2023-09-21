@@ -2,7 +2,6 @@
     height: 98vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     overflow: none;
     overflow-x: none;
 }
@@ -12,7 +11,6 @@
     height: 600px;
     width: 900px;
     display: flex;
-    color: var(--marineblue);
 }
 
 .input-con {
@@ -50,18 +48,6 @@ h2 {
 
 .step2__con {
     gap: 10px;
-}
-
-.next-btn {
-    margin-top: 100px;
-    width: 100px;
-    height: 40px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: var(--marineblue);
-    color: var(--White);
-    border: 1px solid var(--marineblue);
-    align-self: flex-end;
 }
 
 .select-con {
@@ -126,4 +112,25 @@ input:focus {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        justify-content: center;
+    }
+    .middle-wrapper {
+        width: 90%;
+        max-width: 400px;
+        padding: 0;
+        padding: 20px 4px 20px 4px;
+        height: fit-content;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .sidebar {
+    }
 }

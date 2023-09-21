@@ -14,6 +14,8 @@
 body {
     font-family: ubuntumedium;
     background-color: var(--Magnolia);
+    margin: 0;
+    color: var(--marineblue);
 }
 
 @font-face {
@@ -35,15 +37,14 @@ body {
 }
 
 .next-btn {
-    margin-top: 100px;
     width: 100px;
-    height: 40px;
+    height: 45px;
     padding: 5px;
     border-radius: 5px;
     background-color: var(--marineblue);
     color: var(--White);
+    font-family: ubuntu;
     border: 1px solid var(--marineblue);
-    align-self: flex-end;
 }
 
 .back-btn {

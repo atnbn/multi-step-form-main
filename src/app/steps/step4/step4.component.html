@@ -4,7 +4,7 @@
   <div class="payments-con" *ngIf="finalObject && !finalObject?.duration">
     <div class="plan__con">
       <div class="plan__text__left">
-        <span class="plan__type">{{ finalObject.abotyp }} (Monthly )</span>
+        <span class="plan__type">{{ finalObject.abotyp }} (Monthly)</span>
         <a class="plan__change" (click)="goToStep2()">Change</a>
       </div>
       <span class="price">${{ finalObject.price }}/mo</span>
