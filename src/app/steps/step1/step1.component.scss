@@ -58,7 +58,7 @@ form {
 }
 .button__con {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-top: 100px;
 }
 
@@ -75,7 +75,7 @@ form {
         width: 100%;
         left: 0;
         height: 70px;
-        justify-content: end;
+        justify-content: flex-end;
         display: flex;
         align-items: center;
         margin-top: 0;

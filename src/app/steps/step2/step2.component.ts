@@ -17,7 +17,7 @@ export class Step2Component {
       pricingMonthly: 9,
       pricingYearly: 90,
       yearly: false,
-      url: '../assets/images/icon-arcade.svg',
+      url: 'assets/images/icon-arcade.svg',
       id: 1,
     },
     {
@@ -25,7 +25,7 @@ export class Step2Component {
       pricingMonthly: 12,
       pricingYearly: 120,
       yearly: false,
-      url: '../assets/images/icon-advanced.svg',
+      url: 'assets/images/icon-advanced.svg',
       id: 2,
     },
     {
@@ -33,7 +33,7 @@ export class Step2Component {
       pricingMonthly: 15,
       pricingYearly: 150,
       yearly: false,
-      url: '../assets/images/icon-pro.svg',
+      url: 'assets/images/icon-pro.svg',
       id: 3,
     },
   ];

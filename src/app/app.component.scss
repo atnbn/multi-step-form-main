@@ -2,6 +2,7 @@
     height: 98vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     overflow: none;
     overflow-x: none;
 }
@@ -117,6 +118,7 @@ input:focus {
 @media (max-width: 900px) {
     .wrapper {
         justify-content: center;
+        align-items: start;
     }
     .middle-wrapper {
         width: 90%;
@@ -129,8 +131,5 @@ input:focus {
         flex-direction: column;
         justify-content: center;
         margin-top: 100px;
-    }
-
-    .sidebar {
     }
 }
