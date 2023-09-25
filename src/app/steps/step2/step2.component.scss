@@ -4,6 +4,7 @@ section {
     margin-left: 60px;
     gap: 20px;
     margin-top: 20px;
+    position: relative;
 }
 
 h2 {
@@ -182,7 +183,7 @@ input:checked + .slider:before {
         padding: 10px 15px 10px 15px;
     }
     .btns {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         background-color: var(--White);
         width: 100%;
